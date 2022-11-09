@@ -1,8 +1,5 @@
 # MusicLibrary
 
-[![](https://img.shields.io/packagist/dt/ewhitestorm/MusicLibrary.svg)](https://packagist.org/packages/ewhitestorm/MusicLibrary)
-
-
 Маленький проект "Музыкальная библиотека", который позволяет вносить данные о: музыкальных альбомах, исполнителях, песнях и видеть результат/статистику на web-странице на локальном сервере.
 
 #### Реализация: 
