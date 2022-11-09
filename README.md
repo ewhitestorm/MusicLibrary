@@ -14,7 +14,7 @@
 
 ## Установка
 
-Склонируйте репозиторий [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) и выполните следующие команды в терминале.
+Клонируйте репозиторий [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) и выполните следующие команды в терминале.
 
 ```bash
 py -3 -m venv .venv
