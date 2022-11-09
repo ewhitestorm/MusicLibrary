@@ -1,0 +1,13 @@
+{% extends "home_generic.html" %}
+
+{% block content %}
+<h2>Список исполнителей:</h2>
+    <ul>
+        {% for singer in singer_list %}
+        <p>
+            <li>{{ singer.id }}</li>
+            <ul>Исполнитель: <strong>{{ singer.name_singer }}</strong></ul>
+        </p>
+        {% endfor %}
+    </ul>
+{% endblock %}
