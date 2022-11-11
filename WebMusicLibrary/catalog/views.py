@@ -4,6 +4,7 @@ from rest_framework import generics
 from django.contrib.auth.models import User
 from . import serializers
 from django.views import generic
+from django.shortcuts import render, get_object_or_404
 
 
 
@@ -36,7 +37,7 @@ class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer
 
-class UserDetail(generics.ListCreateAPIView):
+class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer
 
@@ -44,7 +45,7 @@ class AlbumList(generics.ListCreateAPIView):
     queryset = Album.objects.all()
     serializer_class = serializers.AlbumSerializer
 
-class AlbumDetail(generics.ListCreateAPIView):
+class AlbumDetail(generics.RetrieveAPIView):
     queryset = Album.objects.all()
     serializer_class = serializers.AlbumSerializer
 
@@ -52,7 +53,7 @@ class SingerList(generics.ListCreateAPIView):
     queryset = Singer.objects.all()
     serializer_class = serializers.SingerSerializer
 
-class SingerDetail(generics.ListCreateAPIView):
+class SingerDetail(generics.RetrieveAPIView):
     queryset = Singer.objects.all()
     serializer_class = serializers.SingerSerializer
 
@@ -60,6 +61,6 @@ class SongList(generics.ListCreateAPIView):
     queryset = Song.objects.all()
     serializer_class = serializers.SongSerializer
 
-class SongDetail(generics.ListCreateAPIView):
+class SongDetail(generics.RetrieveAPIView):
     queryset = Song.objects.all()
     serializer_class = serializers.SongSerializer
