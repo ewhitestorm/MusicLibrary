@@ -36,11 +36,11 @@ python manage.py runserver
     
 Страницы Django Rest Framework:
   * http://127.0.0.1:8000/album/
-  * http://127.0.0.1:8000/album/1/
+  * http://127.0.0.1:8000/album/1/ или [../album/2/](http://127.0.0.1:8000/album/2/) и так далее
   * http://127.0.0.1:8000/singer/
-  * http://127.0.0.1:8000/singer/1/
+  * http://127.0.0.1:8000/singer/1/ или [../singer/2/](http://127.0.0.1:8000/singer/2/) и так далее
   * http://127.0.0.1:8000/song/
-  * http://127.0.0.1:8000/song/1/
+  * http://127.0.0.1:8000/song/1/ или [../song/2/](http://127.0.0.1:8000/song/2/) и так далее
   
 Страница Swagger:
   * http://127.0.0.1:8000/swagger/
