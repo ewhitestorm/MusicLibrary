@@ -1,4 +1,4 @@
-[На русском](https://github.com/ewhitestorm/MusicLibrary/README.md)
+[На русском](https://github.com/ewhitestorm/MusicLibrary/blob/main/README.md)
 # MusicLibrary
 
 A small project "Music Library", which allows you to enter data about: music albums, artists, songs and see the result/statistics on a web page on a local server.
