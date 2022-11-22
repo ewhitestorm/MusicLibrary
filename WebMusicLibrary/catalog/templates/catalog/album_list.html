@@ -1,13 +1,13 @@
 {% extends "home_generic.html" %}
 
 {% block content %}
-<h2>Список альбомов:</h2>
+<h2>Album list:</h2>
     <ul>
         {% for album in album_list %}
         <p>
             <li>{{ album.id }}</li>
-            <ul>Альбом: <strong>{{ album.title }}</strong></ul>
-            <ul>Год: <strong>{{ album.release_date }}</strong></ul>
+            <ul>Album: <strong>{{ album.title }}</strong></ul>
+            <ul>Year: <strong>{{ album.release_date }}</strong></ul>
         </p>
         {% endfor %}
     </ul>

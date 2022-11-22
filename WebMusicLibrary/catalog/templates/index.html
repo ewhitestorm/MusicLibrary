@@ -1,18 +1,18 @@
 {% extends "home_generic.html" %}
 
 {% block content %}
-<h1>База данных:</h1>
+<h1>Database:</h1>
 <ul>
-    <li>Количество зарегистрированных пользователей: <strong>{{ num_user }}</strong></li>
-    <li>Количество музыкальных альбомов: <strong>{{ num_album }}</strong></li>
-    <li>Количество исполнителей: <strong>{{ num_song }}</strong></li>
-    <li>Количество песен: <strong>{{ num_singer }}</strong></li>
+    <li>Number of registered users: <strong>{{ num_user }}</strong></li>
+    <li>Number of music albums: <strong>{{ num_album }}</strong></li>
+    <li>Number of singers: <strong>{{ num_song }}</strong></li>
+    <li>Number of songs: <strong>{{ num_singer }}</strong></li>
 </ul>
 <br />
-<h3>Получить сведения из базы данных:</h3>
+<h3>Get information from the database:</h3>
 <ul>
-    <p><a href="{% url 'Singer' %}">Исполнители</a></p>
-    <p><a href="{% url 'Album' %}">Альбомы</a></p>
-    <p><a href="{% url 'Song' %}">Песни</a></p>
+    <p><a href="{% url 'Singer' %}">Singers</a></p>
+    <p><a href="{% url 'Album' %}">Albums</a></p>
+    <p><a href="{% url 'Song' %}">Songs</a></p>
 </ul>
 {% endblock %}

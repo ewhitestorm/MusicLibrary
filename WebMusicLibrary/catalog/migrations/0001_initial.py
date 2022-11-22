@@ -15,25 +15,25 @@ class Migration(migrations.Migration):
             name='Album',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(help_text='Введите назание альбома', max_length=200, verbose_name='Название альбома')),
-                ('release_date', models.IntegerField(help_text='Введите год выпуска альбома', verbose_name='Год выпуска альбома')),
+                ('title', models.CharField(help_text='Enter album name', max_length=200, verbose_name='Album title')),
+                ('release_date', models.IntegerField(help_text='Enter album release year', verbose_name='Album release year')),
             ],
         ),
         migrations.CreateModel(
             name='Singer',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name_singer', models.CharField(help_text='Введите имя исполнителя', max_length=200, verbose_name='Имя исполнителя')),
+                ('name_singer', models.CharField(help_text='Enter artist name', max_length=200, verbose_name='Artist name')),
             ],
         ),
         migrations.CreateModel(
             name='Song',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name_song', models.CharField(help_text='Введите название песни', max_length=200, verbose_name='Название песни')),
-                ('number', models.IntegerField(help_text='Введите номер песни в альбоме', verbose_name='Номер песни в альбоме')),
-                ('album', models.ManyToManyField(help_text='Выберите название альбома', to='catalog.album', verbose_name='Название альбома')),
-                ('singer', models.ManyToManyField(help_text='Выберите имя исполнителя', to='catalog.singer', verbose_name='Имя исполнителя')),
+                ('name_song', models.CharField(help_text='Enter song title', max_length=200, verbose_name='Name of the song')),
+                ('number', models.IntegerField(help_text='Enter the number of the song in the album', verbose_name='Album song number')),
+                ('album', models.ManyToManyField(help_text='Choose an album name', to='catalog.album', verbose_name='Album title')),
+                ('singer', models.ManyToManyField(help_text='Select artist name', to='catalog.singer', verbose_name='Artist name')),
             ],
         ),
     ]

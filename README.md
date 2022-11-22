@@ -1,3 +1,4 @@
+[In English](https://github.com/ewhitestorm/MusicLibrary/README_EN.md)
 # MusicLibrary
 
 Маленький проект "Музыкальная библиотека", который позволяет вносить данные о: музыкальных альбомах, исполнителях, песнях и видеть результат/статистику на web-странице на локальном сервере.
@@ -20,7 +21,7 @@
 py -3 -m venv .venv
 pip install -r requirements.txt
 python manage.py makemigrations
-python mnage.py migrate
+python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
