@@ -31,6 +31,7 @@ Then open the browser and follow the links from the "Result" block.
 ## Installation with docker-compose
 
 Register on the site [Docker](https://hub.docker.com/).
+
 Download the image (latest version) by typing the following command in a terminal:
 ```bash
 docker pull ewstorm/musiclibrary:latest
