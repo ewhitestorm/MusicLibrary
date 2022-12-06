@@ -1,7 +1,7 @@
 [На русском](https://github.com/ewhitestorm/MusicLibrary/blob/main/README.md)
 # MusicLibrary
 
-A small project "Music Library", which allows you to enter data about: music albums, artists, songs and see the result/statistics on a web page on a local server.
+The project "Music Library", which allows you to enter data about: music albums, artists, songs and see the result/statistics on a web page.
 
 #### Implementation: 
   * [Python](https://www.python.org/)
@@ -12,6 +12,7 @@ A small project "Music Library", which allows you to enter data about: music alb
   * [Django Rest Framework](https://www.django-rest-framework.org/)
   * [Swagger](https://django-rest-swagger.readthedocs.io/en/latest/)
   * [SQLite](https://www.sqlite.org/index.html)
+  * [Docker](https://hub.docker.com/)
 
 ## Installation
 
@@ -25,6 +26,20 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
+Then open the browser and follow the links from the "Result" block.
+
+## Installation with docker-compose
+
+Register on the site [Docker](https://hub.docker.com/)
+Download the image (latest version) by typing the following command in a terminal:
+```bash
+docker pull ewstorm/musiclibrary:latest
+```
+Run the image by typing the following command in a terminal:
+```bash
+docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
+```
+Then open the browser and follow the links from the "Result" block.
 
 ## Result
 
@@ -43,5 +58,5 @@ Pages Django Rest Framework:
   * http://127.0.0.1:8000/song/
   * http://127.0.0.1:8000/song/1/ or [../song/2/](http://127.0.0.1:8000/song/2/) etc.
   
-Pages Swagger:
+Page Swagger:
   * http://127.0.0.1:8000/swagger/

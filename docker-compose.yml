@@ -1,0 +1,11 @@
+version: '3'
+services:
+  django:
+    build: .
+    container_name: django
+    command: python WebMusicLibrary/manage.py runserver 0.0.0.0:8001
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - "8000:8001"
+    

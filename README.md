@@ -1,7 +1,7 @@
 [In English](https://github.com/ewhitestorm/MusicLibrary/blob/main/README_EN.md)
 # MusicLibrary
 
-Маленький проект "Музыкальная библиотека", который позволяет вносить данные о: музыкальных альбомах, исполнителях, песнях и видеть результат/статистику на web-странице на локальном сервере.
+Проект "Музыкальная библиотека", который позволяет вносить данные о: музыкальных альбомах, исполнителях, песнях и видеть результат/статистику на web-странице.
 
 #### Реализация: 
   * [Python](https://www.python.org/)
@@ -12,10 +12,11 @@
   * [Django Rest Framework](https://www.django-rest-framework.org/)
   * [Swagger](https://django-rest-swagger.readthedocs.io/en/latest/)
   * [SQLite](https://www.sqlite.org/index.html)
+  * [Docker](https://hub.docker.com/)
 
 ## Установка
 
-Клонируйте репозиторий [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) и выполните следующие команды в терминале.
+Клонируйте репозиторий [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) и выполните следующие команды в терминале:
 
 ```bash
 py -3 -m venv .venv
@@ -25,6 +26,20 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
+После чего откройте браузер и перейдите по ссылкам из блока "Результат".
+
+## Установка с помощью docker-compose
+
+Зарегистрируйтесь на сайте [Docker](https://hub.docker.com/)
+Загрузите образ (последнюю версию), в терминале прописав команду:
+```bash
+docker pull ewstorm/musiclibrary:latest
+```
+Запустите образ, в терминале прописав команду:
+```bash
+docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
+```
+После чего откройте браузер и перейдите по ссылкам из блока "Результат".
 
 ## Результат
 
