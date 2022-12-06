@@ -30,7 +30,8 @@ python manage.py runserver
 
 ## Установка с помощью docker-compose
 
-Зарегистрируйтесь на сайте [Docker](https://hub.docker.com/)
+Зарегистрируйтесь на сайте [Docker](https://hub.docker.com/).
+
 Загрузите образ (последнюю версию), в терминале прописав команду:
 ```bash
 docker pull ewstorm/musiclibrary:latest
