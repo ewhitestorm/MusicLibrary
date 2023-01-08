@@ -15,20 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from rest_framework_swagger.views import get_swagger_view
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from catalog import views
 import catalog.views
-
 
 
 schema_view = get_swagger_view(title='Music Library API')
 
 urlpatterns = [
-    re_path(r'^$', catalog.views.index, name='index'),
-    re_path(r'^Album/$', views.AlbumListView.as_view(), name='Album'),
-    re_path(r'^Singer/$', views.SingerListView.as_view(), name='Singer'),
-    re_path(r'^Song/$', views.SongListView.as_view(), name='Song'),
-    path('admin/', admin.site.urls),
+    re_path(r'^$', catalog.views.home, name='home'),
+    path('index/', catalog.views.index, name='index'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
+
+    re_path(r'^Albums/$', views.AlbumListView.as_view(), name='Albums'),
+    re_path(r'^Singers/$', views.SingerListView.as_view(), name='Singers'),
+    re_path(r'^Songs/$', views.SongListView.as_view(), name='Songs'),
+
+    path('admin/', admin.site.urls, name='admin'),
     path('swagger/', schema_view),
     path('users/', views.UserList.as_view()),
     path('users/<int:pk>/', views.UserDetail.as_view()),

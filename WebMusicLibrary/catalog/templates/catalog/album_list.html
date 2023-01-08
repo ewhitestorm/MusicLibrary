@@ -3,12 +3,19 @@
 {% block content %}
 <h2>Album list:</h2>
     <ul>
-        {% for album in album_list %}
+        {% if album_list %}
+            {% for album in album_list %}
+            <p>
+                <li>{{ forloop.counter }}. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Album: <strong>{{ album.title }}</strong></li>
+                <ul>Singer: <strong>{{ album.name_singer }}</strong></ul>
+                <ul>Year: <strong>{{ album.release_date }}</strong></ul>
+            </p>
+            {% endfor %}
+        {% else %}
         <p>
-            <li>{{ album.id }}</li>
-            <ul>Album: <strong>{{ album.title }}</strong></ul>
-            <ul>Year: <strong>{{ album.release_date }}</strong></ul>
+            There are no entries in this section.
         </p>
-        {% endfor %}
+        {% endif %}
     </ul>
 {% endblock %}

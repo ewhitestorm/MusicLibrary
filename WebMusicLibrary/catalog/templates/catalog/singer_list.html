@@ -3,11 +3,17 @@
 {% block content %}
 <h2>List of performers:</h2>
     <ul>
-        {% for singer in singer_list %}
+        {% if singer_list %}
+            {% for singer in singer_list %}
+            <p>
+                <li>{{ forloop.counter }}. &nbsp;&nbsp;&nbsp;&nbsp;
+                    Singer: <strong>{{ singer.name_singer }}</strong></li>
+            </p>
+            {% endfor %}
+        {% else %}
         <p>
-            <li>{{ singer.id }}</li>
-            <ul>Singer: <strong>{{ singer.name_singer }}</strong></ul>
+            There are no entries in this section.
         </p>
-        {% endfor %}
+        {% endif %}
     </ul>
 {% endblock %}

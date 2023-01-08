@@ -1,0 +1,18 @@
+{% extends "home_generic.html" %}
+
+{% block content %}
+<h1>Music Library</h1>
+<p>Do you like to listen to music and write down lyrics?!</p>
+<p>Our resource will help you save your collection.</p>
+<ul>
+    <p><a href="{% url 'login' %}">Log In</a></p>
+    <p><a href="{% url 'register' %}">Register</a></p>
+</ul>
+<h3>Currently, the music library is able to save:</h3>
+<ul>
+    <li>names of musicians and musical groups</li>
+    <li>music album titles</li>
+    <li>track names and their serial numbers in the album</li>
+    <li>album release dates</li>
+</ul>
+{% endblock %}

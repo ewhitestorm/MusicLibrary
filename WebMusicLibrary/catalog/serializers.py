@@ -10,14 +10,14 @@ class UserSerializer(serializers.ModelSerializer):
 class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
-        fields = ['id', 'title', 'release_date']
+        fields = ['id', 'title', 'release_date', 'name_singer', 'author']
 
 class SingerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Singer
-        fields = ['id', 'name_singer']
+        fields = ['id', 'name_singer', 'author']
 
 class SongSerializer(serializers.ModelSerializer):
     class Meta:
         model = Song
-        fields = ['id', 'name_song', 'number', 'album', 'singer']
+        fields = ['id', 'name_song', 'number', 'title', 'name_singer', 'author']

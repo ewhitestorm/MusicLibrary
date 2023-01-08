@@ -1,0 +1,12 @@
+{% extends "home_generic.html" %}
+
+{% block content %}
+<h1>Log In:</h1>
+<form method='post'>
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <p><button type="submit">Log In</button></p>
+</form>
+{% endblock %}

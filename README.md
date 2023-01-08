@@ -26,9 +26,9 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
 ```
-После чего откройте браузер и перейдите по ссылкам из блока "Результат".
+После чего откройте браузер и перейдите по ссылке из блока "Результат".
 
-## Установка с помощью docker-compose
+## Установка с помощью docker-compose (только для версии 1.0)
 
 Зарегистрируйтесь на сайте [Docker](https://hub.docker.com/)
 Загрузите образ (последнюю версию), в терминале прописав команду:
@@ -39,24 +39,9 @@ docker pull ewstorm/musiclibrary:latest
 ```bash
 docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
 ```
-После чего откройте браузер и перейдите по ссылкам из блока "Результат".
+После чего откройте браузер и перейдите по ссылке из блока "Результат".
 
 ## Результат
 
-Страницы HTML:
+Страница HTML:
   * http://127.0.0.1:8000/
-  * http://127.0.0.1:8000/admin/
-  * http://127.0.0.1:8000/Album/
-  * http://127.0.0.1:8000/Singer/
-  * http://127.0.0.1:8000/Song/
-    
-Страницы Django Rest Framework:
-  * http://127.0.0.1:8000/album/
-  * http://127.0.0.1:8000/album/1/ или [../album/2/](http://127.0.0.1:8000/album/2/) и так далее
-  * http://127.0.0.1:8000/singer/
-  * http://127.0.0.1:8000/singer/1/ или [../singer/2/](http://127.0.0.1:8000/singer/2/) и так далее
-  * http://127.0.0.1:8000/song/
-  * http://127.0.0.1:8000/song/1/ или [../song/2/](http://127.0.0.1:8000/song/2/) и так далее
-  
-Страница Swagger:
-  * http://127.0.0.1:8000/swagger/

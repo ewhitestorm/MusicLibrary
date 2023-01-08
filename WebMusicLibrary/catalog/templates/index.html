@@ -1,18 +1,41 @@
 {% extends "home_generic.html" %}
 
 {% block content %}
-<h1>Database:</h1>
+{% if user.is_authenticated %}
+<h1>{{ user.username }}!</h1>
+<h1>This is your Music Library:</h1>
 <ul>
-    <li>Number of registered users: <strong>{{ num_user }}</strong></li>
-    <li>Number of music albums: <strong>{{ num_album }}</strong></li>
-    <li>Number of singers: <strong>{{ num_song }}</strong></li>
-    <li>Number of songs: <strong>{{ num_singer }}</strong></li>
+    <a href="{% url 'Albums' %}">Albums</a>
+    <a style='margin-left: 20px' href="{% url 'Singers' %}">Singers</a>
+    <a style='margin-left: 20px' href="{% url 'Songs' %}">Songs</a>
 </ul>
+<ul>
+    <li>Number of music Albums: <strong>{{ num_album }}</strong></li>
+    <li>Number of Singers: <strong>{{ num_singer }}</strong></li>
+    <li>Number of Songs: <strong>{{ num_song }}</strong></li>
+</ul>
+<form method="POST" enctype="multipart/form-data" action="">
+    {% csrf_token %}
+    <fieldset>
+        <legend class="border-bottom mb-4">Your new entry</legend>
+        <table>
+            {{ singer_form.as_table }}
+            {{ song_form.as_table }}
+            {{ album_form.as_table }}
+        </table>
+    </fieldset>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+</form>
 <br />
-<h3>Get information from the database:</h3>
+{% else %}
+<h2>You are not logged in as a user!</h2>
+</br>
+<h3>Log in to your account or register.</h3>
 <ul>
-    <p><a href="{% url 'Singer' %}">Singers</a></p>
-    <p><a href="{% url 'Album' %}">Albums</a></p>
-    <p><a href="{% url 'Song' %}">Songs</a></p>
+    <p><a href="{% url 'login' %}">Log In</a></p>
+    <p><a href="{% url 'register' %}">Register</a></p>
 </ul>
+{% endif %}
 {% endblock %}
