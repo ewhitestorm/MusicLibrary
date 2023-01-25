@@ -14,6 +14,9 @@
   * [SQLite](https://www.sqlite.org/index.html)
   * [Docker](https://hub.docker.com/)
 
+#### Тестирование:
+  * [Pytest](https://docs.pytest.org/)
+
 ## Установка
 
 Клонируйте репозиторий [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) и выполните следующие команды в терминале:

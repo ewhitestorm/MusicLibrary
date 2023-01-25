@@ -14,6 +14,9 @@ The project "Music Library", which allows you to enter data about: music albums,
   * [SQLite](https://www.sqlite.org/index.html)
   * [Docker](https://hub.docker.com/)
 
+#### Testing:
+  * [Pytest](https://docs.pytest.org/)
+
 ## Installation
 
 Clone the repository [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) and run the following commands in a terminal.
