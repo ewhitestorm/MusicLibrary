@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+from .private.secrets_musiclibrary import SecretConfig
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-
-with open('../../../Projects/SECRET_KEY/MusicLibrary/secret_key.txt') as f:
-    SECRET_KEY = f.read()
+scr_key = SecretConfig('../../../Projects/SECRET_KEY/MusicLibrary/secrets_musiclibrary.json')
+SECRET_KEY = scr_key.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,9 +85,13 @@ WSGI_APPLICATION = 'WebMusicLibrary.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': scr_key.get('DATA_BASE', 'NAME'),
+        'USER': scr_key.get('DATA_BASE', 'USER'),
+        'PASSWORD': scr_key.get('DATA_BASE', 'PASSWORD'),
+        'HOST': scr_key.get('DATA_BASE', 'HOST'),
+        'PORT': scr_key.get('DATA_BASE', 'PORT'),
+    },
 }
 
 
