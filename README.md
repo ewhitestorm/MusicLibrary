@@ -11,7 +11,7 @@
   * [Django](https://www.djangoproject.com/)
   * [Django Rest Framework](https://www.django-rest-framework.org/)
   * [Swagger](https://django-rest-swagger.readthedocs.io/en/latest/)
-  * [SQLite](https://www.sqlite.org/index.html)
+  * [PostgreSQL](https://www.postgresql.org/)
   * [Docker](https://hub.docker.com/)
 
 #### Тестирование:
@@ -31,7 +31,7 @@ python manage.py runserver
 ```
 После чего откройте браузер и перейдите по ссылке из блока "Результат".
 
-## Установка с помощью docker-compose (только для версии 1.0)
+## Установка с помощью docker-compose (только для версии [1.0](https://github.com/ewhitestorm/MusicLibrary/tree/Version_1.0))
 
 Зарегистрируйтесь на сайте [Docker](https://hub.docker.com/)
 Загрузите образ (последнюю версию), в терминале прописав команду:

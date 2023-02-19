@@ -11,7 +11,7 @@ The project "Music Library", which allows you to enter data about: music albums,
   * [Django](https://www.djangoproject.com/)
   * [Django Rest Framework](https://www.django-rest-framework.org/)
   * [Swagger](https://django-rest-swagger.readthedocs.io/en/latest/)
-  * [SQLite](https://www.sqlite.org/index.html)
+  * [PostgreSQL](https://www.postgresql.org/)
   * [Docker](https://hub.docker.com/)
 
 #### Testing:
@@ -31,7 +31,7 @@ python manage.py runserver
 ```
 Then open the browser and follow the link from the "Result" block.
 
-## Installation with docker-compose (only for version 1.0)
+## Installation with docker-compose (only for version [1.0](https://github.com/ewhitestorm/MusicLibrary/tree/Version_1.0))
 
 Register on the site [Docker](https://hub.docker.com/)
 Download the image (latest version) by typing the following command in a terminal:
