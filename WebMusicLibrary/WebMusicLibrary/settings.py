@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-scr_key = SecretConfig('../../../Projects/SECRET_KEY/MusicLibrary/secrets_musiclibrary.json')
+scr_key = SecretConfig('../../Projects/SECRET_KEY/MusicLibrary/secrets_musiclibrary.json')
 SECRET_KEY = scr_key.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
