@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import datetime
+import decimal
 from typing import Any
 from typing import cast
 from typing import Dict
@@ -54,7 +55,6 @@ from .elements import WithinGroup
 from .selectable import FromClause
 from .selectable import Select
 from .selectable import TableValuedAlias
-from .sqltypes import _N
 from .sqltypes import TableValueType
 from .type_api import TypeEngine
 from .visitors import InternalTraversal
@@ -99,6 +99,11 @@ def register_function(identifier, fn, package="_default"):
 
 class FunctionElement(Executable, ColumnElement[_T], FromClause, Generative):
     """Base for SQL function-oriented constructs.
+
+    This is a `generic type <https://peps.python.org/pep-0484/#generics>`_,
+    meaning that type checkers and IDEs can be instructed on the types to
+    expect in a :class:`_engine.Result` for this function. See
+    :class:`.GenericFunction` for an example of how this is done.
 
     .. seealso::
 
@@ -950,7 +955,7 @@ class _FunctionGenerator:
             ...
 
         @property
-        def cume_dist(self) -> Type[cume_dist[Any]]:
+        def cume_dist(self) -> Type[cume_dist]:
             ...
 
         @property
@@ -1014,7 +1019,7 @@ class _FunctionGenerator:
             ...
 
         @property
-        def percent_rank(self) -> Type[percent_rank[Any]]:
+        def percent_rank(self) -> Type[percent_rank]:
             ...
 
         @property
@@ -1248,6 +1253,19 @@ class GenericFunction(Function[_T]):
 
         >>> print(func.geo.buffer())
         {printsql}"ST_Buffer"()
+
+    Type parameters for this class as a
+    `generic type <https://peps.python.org/pep-0484/#generics>`_ can be passed
+    and should match the type seen in a :class:`_engine.Result`. For example::
+
+        class as_utc(GenericFunction[datetime.datetime]):
+            type = DateTime()
+            inherit_cache = True
+
+    The above indicates that the following expression returns a ``datetime``
+    object::
+
+        connection.scalar(select(func.as_utc()))
 
     .. versionadded:: 1.3.13  The :class:`.quoted_name` construct is now
        recognized for quoting when used with the "name" attribute of the
@@ -1703,7 +1721,7 @@ class dense_rank(GenericFunction[int]):
     inherit_cache = True
 
 
-class percent_rank(GenericFunction[_N]):
+class percent_rank(GenericFunction[decimal.Decimal]):
     """Implement the ``percent_rank`` hypothetical-set aggregate function.
 
     This function must be used with the :meth:`.FunctionElement.within_group`
@@ -1715,11 +1733,11 @@ class percent_rank(GenericFunction[_N]):
 
     """
 
-    type: sqltypes.Numeric[_N] = sqltypes.Numeric()
+    type: sqltypes.Numeric[decimal.Decimal] = sqltypes.Numeric()
     inherit_cache = True
 
 
-class cume_dist(GenericFunction[_N]):
+class cume_dist(GenericFunction[decimal.Decimal]):
     """Implement the ``cume_dist`` hypothetical-set aggregate function.
 
     This function must be used with the :meth:`.FunctionElement.within_group`
@@ -1731,7 +1749,7 @@ class cume_dist(GenericFunction[_N]):
 
     """
 
-    type: sqltypes.Numeric[_N] = sqltypes.Numeric()
+    type: sqltypes.Numeric[decimal.Decimal] = sqltypes.Numeric()
     inherit_cache = True
 
 

@@ -1,3 +1,4 @@
+import redis
 from django.shortcuts import render, redirect
 from .models import Album, Singer, Song
 from rest_framework import generics
@@ -7,6 +8,8 @@ from django.views import generic
 from django.contrib.auth.decorators import login_required
 from .forms import CreateSingerForm, CreateSongForm, CreateAlbumForm
 from django.http import Http404
+from .redis_cache import UserRedis
+from .sqlalchemy_db import get_data, set_data, del_data
 
 
 def home(request):
@@ -25,6 +28,8 @@ def index(request):
     cut_song_list = []
 
     num_user = User.objects.all().count()
+    
+    UserRedis.get_user_redis(str(request.user))
     
     def temp(self):
         for elem in self.objects.filter(author=request.user):
@@ -98,8 +103,12 @@ def index(request):
         singer_form = CreateSingerForm()
         song_form = CreateSongForm()
         album_form = CreateAlbumForm()
-
-    contex = {
+    
+    set_data()
+    get_data()
+    # del_data()
+    
+    context = {
         'num_user': num_user,
         'num_album': num_album,
         'num_song': num_song,
@@ -108,7 +117,7 @@ def index(request):
         'song_form': song_form,
         'album_form': album_form,
     }
-    return render(request, 'index.html', contex)
+    return render(request, 'index.html', context)
 
 
 class AlbumListView(generic.ListView): 

@@ -92,6 +92,10 @@ DATABASES = {
         'HOST': scr_key.get('DATA_BASE', 'HOST'),
         'PORT': scr_key.get('DATA_BASE', 'PORT'),
     },
+    'users': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
