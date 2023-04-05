@@ -1,7 +1,7 @@
 [In English](https://github.com/ewhitestorm/MusicLibrary/blob/main/README_EN.md)
 # MusicLibrary
 
-Проект "Музыкальная библиотека", который позволяет вносить данные о: музыкальных альбомах, исполнителях, песнях и видеть результат/статистику на web-странице.
+Проект "Музыкальная библиотека" - это блокнот для коллекционирования: музыкальных альбомов, исполнителей, текстов песен.
 
 #### Реализация: 
   * [Python](https://www.python.org/)
@@ -12,10 +12,17 @@
   * [Django Rest Framework](https://www.django-rest-framework.org/)
   * [Swagger](https://django-rest-swagger.readthedocs.io/en/latest/)
   * [PostgreSQL](https://www.postgresql.org/)
+  * [SQLite](https://www.sqlite.org/)
   * [Docker](https://hub.docker.com/)
+  * [SQLAlchemy](https://www.sqlalchemy.org/)
+  * [Redis](https://redis.io/)
 
 #### Тестирование:
   * [Pytest](https://docs.pytest.org/)
+
+#### Адаптирован для:
+  * Windows 
+  * Linux Debian ([WSL](https://learn.microsoft.com/ru-ru/windows/wsl/about/))
 
 ## Установка
 
@@ -42,7 +49,7 @@ docker pull ewstorm/musiclibrary:latest
 ```bash
 docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
 ```
-После чего откройте браузер и перейдите по ссылке из блока "Результат".
+Откройте браузер и перейдите по ссылке из блока "Результат".
 
 ## Результат
 

@@ -1,7 +1,7 @@
 [На русском](https://github.com/ewhitestorm/MusicLibrary/blob/main/README.md)
 # MusicLibrary
 
-The project "Music Library", which allows you to enter data about: music albums, artists, songs and see the result/statistics on a web page.
+The project "Music Library" is a notebook for collecting: music albums, artists, lyrics.
 
 #### Implementation: 
   * [Python](https://www.python.org/)
@@ -12,10 +12,17 @@ The project "Music Library", which allows you to enter data about: music albums,
   * [Django Rest Framework](https://www.django-rest-framework.org/)
   * [Swagger](https://django-rest-swagger.readthedocs.io/en/latest/)
   * [PostgreSQL](https://www.postgresql.org/)
+  * [SQLite](https://www.sqlite.org/)
   * [Docker](https://hub.docker.com/)
+  * [SQLAlchemy](https://www.sqlalchemy.org/)
+  * [Redis](https://redis.io/)
 
 #### Testing:
   * [Pytest](https://docs.pytest.org/)
+
+#### Adapted for:
+  * Windows 
+  * Linux Debian ([WSL](https://learn.microsoft.com/ru-ru/windows/wsl/about/))
 
 ## Installation
 
@@ -42,7 +49,7 @@ Run the image by typing the following command in a terminal:
 ```bash
 docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
 ```
-Then open the browser and follow the link from the "Result" block.
+Open a browser and follow the link from the "Result" block.
 
 ## Result
 
