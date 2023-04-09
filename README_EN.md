@@ -1,4 +1,5 @@
-[На русском](https://github.com/ewhitestorm/MusicLibrary/blob/main/README.md)
+<i><p align="right">[Русский](https://github.com/ewhitestorm/MusicLibrary/blob/main/README.md)</p></i>
+###### [Version_3.0](https://github.com/ewhitestorm/MusicLibrary.git) - Linux version.
 # MusicLibrary
 
 The project "Music Library" is a notebook for collecting: music albums, artists, lyrics.
@@ -29,12 +30,19 @@ The project "Music Library" is a notebook for collecting: music albums, artists,
 Clone the repository [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) and run the following commands in a terminal.
 
 ```bash
-py -3 -m venv .venv
-pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+$ sudo apt-get update
+$ sudo apt-get install python3-venv
+$ python3.9 -m venv .venv
+$ pip install -r requirements.txt
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+$ python3 manage.py createsuperuser
+```
+In VSCode, connect to WSL and in a bash terminal run the command to run the bash script:
+```bash
+$ source musiclibrary.sh
+or
+$ . musiclibrary.sh
 ```
 Then open the browser and follow the link from the "Result" block.
 
@@ -45,7 +53,7 @@ Download the image (latest version) by typing the following command in a termina
 ```bash
 docker pull ewstorm/musiclibrary:latest
 ```
-Run the image by typing the following command in a terminal:
+Run the image with the command:
 ```bash
 docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
 ```

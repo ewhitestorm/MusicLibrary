@@ -1,4 +1,5 @@
-[In English](https://github.com/ewhitestorm/MusicLibrary/blob/main/README_EN.md)
+<i><p align="right">[English](https://github.com/ewhitestorm/MusicLibrary/blob/main/README_EN.md)</p></i>
+###### [Version_3.0](https://github.com/ewhitestorm/MusicLibrary.git) - Linux версия.
 # MusicLibrary
 
 Проект "Музыкальная библиотека" - это блокнот для коллекционирования: музыкальных альбомов, исполнителей, текстов песен.
@@ -29,23 +30,30 @@
 Клонируйте репозиторий [MusicLibrary](https://github.com/ewhitestorm/MusicLibrary.git) и выполните следующие команды в терминале:
 
 ```bash
-py -3 -m venv .venv
-pip install -r requirements.txt
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
+$ sudo apt-get update
+$ sudo apt-get install python3-venv
+$ python3.9 -m venv .venv
+$ pip install -r requirements.txt
+$ python3 manage.py makemigrations
+$ python3 manage.py migrate
+$ python3 manage.py createsuperuser
+```
+В VSCode подключитесь к WSL и в bash-терминале выполните команду для запуска bash сценария:
+```bash
+$ source musiclibrary.sh
+или
+$ . musiclibrary.sh
 ```
 После чего откройте браузер и перейдите по ссылке из блока "Результат".
 
 ## Установка с помощью docker-compose (только для версии [1.0](https://github.com/ewhitestorm/MusicLibrary/tree/Version_1.0))
 
 Зарегистрируйтесь на сайте [Docker](https://hub.docker.com/)
-Загрузите образ (последнюю версию), в терминале прописав команду:
+Загрузите образ (последнюю версию), прописав команду в терминале:
 ```bash
 docker pull ewstorm/musiclibrary:latest
 ```
-Запустите образ, в терминале прописав команду:
+Запустите образ, с помощью команды:
 ```bash
 docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
 ```

@@ -26,6 +26,8 @@
     ],
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "python.pythonPath": "./.venv/Scripts/python3.9",
     "cSpell.words": [
         "backref",
         "coreapi",
