@@ -1,4 +1,4 @@
-<i><p align="right">[Русский](https://github.com/ewhitestorm/MusicLibrary/blob/main/README.md)</p></i>
+<i><p align="right">[Русский](https://github.com/ewhitestorm/MusicLibrary/blob/Version_3.0/README.md)</p></i>
 ###### [Version_3.0](https://github.com/ewhitestorm/MusicLibrary.git) - Linux version.
 # MusicLibrary
 
@@ -62,4 +62,4 @@ Open a browser and follow the link from the "Result" block.
 ## Result
 
 Page HTML:
-  * http://127.0.0.1:8000/
+  * http://127.0.0.1:8080/

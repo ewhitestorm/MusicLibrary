@@ -1,4 +1,4 @@
-<i><p align="right">[English](https://github.com/ewhitestorm/MusicLibrary/blob/main/README_EN.md)</p></i>
+<i><p align="right">[English](https://github.com/ewhitestorm/MusicLibrary/blob/Version_3.0/README_EN.md)</p></i>
 ###### [Version_3.0](https://github.com/ewhitestorm/MusicLibrary.git) - Linux версия.
 # MusicLibrary
 
@@ -62,4 +62,4 @@ docker run -p 8000:8001 --name musiclibrary-django ewstorm/musiclibrary
 ## Результат
 
 Страница HTML:
-  * http://127.0.0.1:8000/
+  * http://127.0.0.1:8080/
