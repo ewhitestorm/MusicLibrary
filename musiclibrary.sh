@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 cd WebMusicLibrary/
 sudo service postgresql start
-redis-cli ping 2> ./logging/redislog.txt
+redis-cli ping 2> ./WebMusicLibrary/logs/redislog.txt
 result=`tac ./logging/redislog.txt | grep -m 1 .`
 if [[ "$result" == "Could not connect"* ]]
 then
